@@ -1,0 +1,3 @@
+代码主要看java,layout,value(strings.xml)部分。
+java-MainActivity.java
+layout-Activity_main.xml
