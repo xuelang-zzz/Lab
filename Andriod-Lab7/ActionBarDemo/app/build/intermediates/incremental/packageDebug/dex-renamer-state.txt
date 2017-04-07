@@ -1,0 +1,4 @@
+#Fri Apr 07 16:00:32 CST 2017
+base.0=F\:\\AS\\andyhamgit\\android02180021\\07 Menu\\Menu_AS\\Menu_AS\\ActionBarDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=F\:\\AS\\andyhamgit\\android02180021\\07 Menu\\Menu_AS\\Menu_AS\\ActionBarDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
