@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="app_name">call1</string>
+    <string name="button">拨号</string>
+    <string name="notify_incorrect_phonenumber" >你拨打的号码有误，请再次输入</string>
+</resources>

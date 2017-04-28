@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
+    andriod:orientation="vertical"
+    andriod:layout_width="fill_parent"
+    andriod:layout_height="fill_parent"
+    >
+    <Button andriod:id="@+id/Button1"
+        andriod:layout_height="wrap_content"
+        andriod:layout_width="fill_parent"
+        andriod:text="@string/button"/>
+</LinearLayout>
