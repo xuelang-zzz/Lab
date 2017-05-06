@@ -2,14 +2,13 @@ package com.example.a13616.cwmcalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
 
-public class MainActivity extends Activity implements OnClickListener
+public class MainActivity extends Activity implements OnClickListener  //OnClickListen:接口
 {
     private EditText print;       //显示框
     private Button btn_0;         // 0
@@ -31,7 +30,7 @@ public class MainActivity extends Activity implements OnClickListener
     private Button btn_clear;    // 清除显示框
     private String num1 = "0";      //用户输入的第一个数
     private String num2 = "0";      //用户输入的第二个数
-    public int fg = 0;    //设置一个标志位并初始化，用于判断用户点击了加减乘除中的哪一个运算
+    public int fg = 0;    //设置一个标志位，用于判断用户点击了加减乘除中的哪一个运算
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +58,7 @@ public class MainActivity extends Activity implements OnClickListener
         btn_clear = (Button) findViewById(R.id.btn_clear);
 
         //为每个Button设置监听器
+        //this指代的是在MainActivity中实现了OnClickListen接口
         btn_0.setOnClickListener(this);
         btn_1.setOnClickListener(this);
         btn_2.setOnClickListener(this);
@@ -80,129 +80,8 @@ public class MainActivity extends Activity implements OnClickListener
 
     //鼠标点击函数
     @Override
-    public void onClick(View arg0)      //arg0方法
+    public void onClick(View v)       //View类型的变量v
     {
         // TODO Auto-generated method stub
-        switch(arg0.getId()) {
-            case R.id.btn_0:
-                print.append("0");
-                break;
-            case R.id.btn_1:
-                print.append("1");
-                break;
-            case R.id.btn_2:
-                print.append("2");
-                break;
-            case R.id.btn_3:
-                print.append("3");
-                break;
-            case R.id.btn_4:
-                print.append("4");
-                break;
-            case R.id.btn_5:
-                print.append("5");
-                break;
-            case R.id.btn_6:
-                print.append("6");
-                break;
-            case R.id.btn_7:
-                print.append("7");
-                break;
-            case R.id.btn_8:
-                print.append("8");
-                break;
-            case R.id.btn_9:
-                print.append("9");
-                break;
-            case R.id.btn_point:
-                print.append(".");
-                break;
-            case R.id.btn_add:
-                fg = 1;  //当用户点击加号时，标志位设为1
-                num1 = print.getText().toString();
-                print.setText("");
-                break;
-            case R.id.btn_subtract:
-                fg = 2;   //当用户点击减号时，标志位设为2
-                num1 = print.getText().toString();
-                print.setText("");
-                break;
-            case R.id.btn_multiply:
-                fg = 3;     //当用户点击乘号时，标志位设为3
-                num1 = print.getText().toString();
-                print.setText("");
-                break;
-            case R.id.btn_divide:
-                fg = 4;     //当用户点击除号时，标志位设为4
-                num1 = print.getText().toString();
-                print.setText("");
-                break;
-            case R.id.btn_equals:
-                switch (fg) { //根据之前fg的设定值，选择输出哪一种运算的结果
-                    case 0:
-                        //print.setText(num1);
-                        print.append("0");
-                        Log.d("num1", num1);
-                        Log.d("num2", num2);
-                        break;
-                    case 1:
-                        //print.setText("fg=1");
-                        num2 = print.getText().toString();
-                        Double result1 = Double.parseDouble(num1)
-                                + Double.parseDouble(num2);
-                        CharSequence r1 = result1.toString();
-                        print.setText(result1 + "");
-                        Log.d("num1", num1);
-                        Log.d("num2", num2);
-                        Log.d("result", result1.toString());
-                        break;
-                    case 2:
-                        // print.setText("fg=2");
-                        num2 = print.getText().toString();
-                        Double result2 = (Double.parseDouble(num1)
-                                - Double.parseDouble(num2));
-                        CharSequence r2 = result2.toString();
-                        print.setText(result2 + "");
-                        Log.d("num1", num1);
-                        Log.d("num2", num2);
-                        Log.d("result", result2.toString());
-                        break;
-                    case 3:
-                        // print.setText("fg=3");
-                        num2 = print.getText().toString();
-                        Double result3 = Double.parseDouble(num1)
-                                * Double.parseDouble(num2);
-                        CharSequence re3 = result3.toString();
-                        print.setText(result3 + "");
-                        Log.d("num1", num1);
-                        Log.d("num2", num2);
-                        Log.d("result", result3.toString());
-                        break;
-                    case 4:
-                        // print.setText("fg=4");
-                        num2 = print.getText().toString();
-                        Double result4 = Double.parseDouble(num1)
-                                / Double.parseDouble(num2);
-                        CharSequence r4 = result4.toString();
-                        print.setText(result4 + "");
-                        Log.d("num1", num1);
-                        Log.d("num2", num2);
-                        Log.d("result", result4.toString());
-                        break;
-
-                    default:
-                        break;
-                }
-                break;
-            case R.id.btn_clear:
-                fg = 0;
-                num1 = "0";
-                num2 = "0";
-                print.setText("");
-                break;
-            default:
-                break;
-        }
-
     }
 }
