@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements OnClickListener  //OnClickListen:接口
@@ -195,14 +196,22 @@ public class MainActivity extends Activity implements OnClickListener  //OnClick
                         break;
 
                     case 4:
+                        Double result4=0.0;
                         num2 = print.getText().toString();
-                        Double result4 = Double.parseDouble(num1)
+                        try {
+                        result4 = Double.parseDouble(num1)
                                 / Double.parseDouble(num2);    //进行除法运算
+                        } catch(ArithmeticException e){
+                            e.printStackTrace();
+                            Toast toast=Toast.makeText(this, "除数不能为0", Toast.LENGTH_LONG);
+                            toast.show();
+                        }
                         print.setText(result4.toString());
                         Log.d("num1", num1);
                         Log.d("num2", num2);
                         Log.d("result", result4.toString());
                         break;
+
 
                     default:
                         break;
